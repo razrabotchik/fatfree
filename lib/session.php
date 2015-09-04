@@ -173,7 +173,7 @@ class Session {
 				$fw->call($onsuspect,array($this));
 			else {
 				session_destroy();
-				$fw->error(403);
+				session_start();
 			}
 		}
 		$csrf=$fw->hash($fw->get('ROOT').$fw->get('BASE')).'.'.
